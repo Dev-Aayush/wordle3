@@ -23,11 +23,11 @@ input {
   flex-flow: row;
 }
 
-input {
+/* input {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
   flex-direction: row;
   flex-basis: auto;
   margin: 0;
-}
+} */
