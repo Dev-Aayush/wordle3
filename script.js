@@ -595,3 +595,27 @@ row3.forEach((e) => {
     }
   });
 });
+
+// async function rowCapture(row_no) {
+//   j = 0;
+//   row = [];
+//   input_word_row = [];
+//   for (i = 0; i < 7; i++) {
+//     row.push(document.getElementById((row_no - 1) * 7 + i + 1));
+//   }
+//   console.log(row);
+//   await row.forEach((e) => {
+//     e.addEventListener("change", () => {
+//       e.setAttribute("disabled", "true");
+//       // console.log(e.value);
+//       input_word_row.push(e.value);
+//       j++;
+//       if (j == 7) {
+//         checkPosition(input_word_row, row_no);
+//       }
+//     });
+//   });
+// }
+// rowCapture(1);
+// console.log("row1 doneeeeeeeeee");
+// rowCapture(2);
