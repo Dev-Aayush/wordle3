@@ -1,4 +1,5 @@
 .boxes {
+  /* background-color: black; */
   border-style: solid;
   padding: 2px;
   margin-left: 0px;
@@ -17,11 +18,11 @@ input {
 .rows {
   margin: 0px;
 }
-.table {
+/* .table {
   display: flex;
   flex-direction: row;
   flex-flow: row;
-}
+} */
 
 /* input {
   display: flex;
@@ -31,3 +32,9 @@ input {
   flex-basis: auto;
   margin: 0;
 } */
+.green {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
