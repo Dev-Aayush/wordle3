@@ -504,7 +504,7 @@ words = [
 window.onload = function () {
   document.getElementById("1").focus();
 };
-// present = [0, 0, 0, 0, 0, 0, 0];
+
 random_no = Math.floor(Math.random() * 500 + 1);
 console.log(words[random_no]);
 word = words[random_no];
@@ -532,7 +532,6 @@ function checkPosition(input_word, row_no) {
   randomWord = word;
   input_word = input_word;
   for (i = 0; i < 7; i++) {
-    // console.log(randomWord[i]);
     if (input_word[i] == randomWord[i]) {
       document.getElementById((row_no - 1) * 7 + i + 1).classList.add("green");
       randomWord = randomWord.replace(input_word[i], "*");
@@ -543,14 +542,12 @@ function checkPosition(input_word, row_no) {
 }
 
 function isGameOver(row_no) {
-  // boxes = [];
   l = 0;
   for (i = (row_no - 1) * 7; i < (row_no - 1) * 7 + 7; i++) {
     // console.log(i);
     if (document.getElementById(i + 1).classList.contains("green")) {
       l++;
     }
-    // console.log("j is " + j.toString());
   }
   if (l == 7) {
     alert("Game Over");
@@ -567,14 +564,12 @@ j = 0;
 row1.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    // console.log(e.value);
 
-    // input_word_row1.push(e.value);
     input_word_row1 += e.value;
     j++;
     if (j == 7) {
       checkPosition(input_word_row1, 1);
-      // checkPresence(input_word_row1, 1);
+
       isGameOver(1);
     }
   });
@@ -586,7 +581,6 @@ for (i = 8; i < 15; i++) {
   row2.push(document.getElementById(i));
 }
 row2.forEach((e) => {
-  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
     console.log("2nd row " + e.value);
@@ -594,7 +588,7 @@ row2.forEach((e) => {
     j++;
     if (j == 14) {
       checkPosition(input_word_row2, 2);
-      // checkPresence(input_word_row2, 2);
+
       isGameOver(2);
     }
   });
@@ -606,15 +600,14 @@ for (i = 15; i < 22; i++) {
   row3.push(document.getElementById(i));
 }
 row3.forEach((e) => {
-  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    // console.log(e.value);
+
     input_word_row3.push(e.value);
     j++;
     if (j == 21) {
       checkPosition(input_word_row3, 3);
-      // checkPresence(input_word_row3, 3);
+
       isGameOver(3);
     }
   });
@@ -626,17 +619,14 @@ for (i = 22; i < 29; i++) {
   row4.push(document.getElementById(i));
 }
 row4.forEach((e) => {
-  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    // console.log(e.value);
 
-    // input_word_row1.push(e.value);
     input_word_row4 += e.value;
     j++;
     if (j == 28) {
       checkPosition(input_word_row4, 4);
-      // checkPresence(input_word_row1, 1);
+
       isGameOver(4);
     }
   });
@@ -647,19 +637,16 @@ input_word_row5 = "";
 for (i = 29; i < 36; i++) {
   row5.push(document.getElementById(i));
 }
-// console.log(row5);
+
 row5.forEach((e) => {
-  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    // console.log(e.value);
 
-    // input_word_row1.push(e.value);
     input_word_row5 += e.value;
     j++;
     if (j == 35) {
       checkPosition(input_word_row5, 5);
-      // checkPresence(input_word_row1, 1);
+
       isGameOver(5);
     }
   });
@@ -671,17 +658,14 @@ for (i = 36; i < 43; i++) {
   row6.push(document.getElementById(i));
 }
 row6.forEach((e) => {
-  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    // console.log(e.value);
 
-    // input_word_row1.push(e.value);
     input_word_row6 += e.value;
     j++;
     if (j == 42) {
       checkPosition(input_word_row6, 6);
-      // checkPresence(input_word_row1, 1);
+
       isGameOver(6);
       end();
     }
