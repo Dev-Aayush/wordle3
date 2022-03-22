@@ -581,6 +581,7 @@ for (i = 8; i < 15; i++) {
   row2.push(document.getElementById(i));
 }
 row2.forEach((e) => {
+  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
     // console.log(e.value);
@@ -600,6 +601,7 @@ for (i = 15; i < 22; i++) {
   row3.push(document.getElementById(i));
 }
 row3.forEach((e) => {
+  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
     // console.log(e.value);
@@ -620,6 +622,7 @@ for (i = 22; i < 29; i++) {
 }
 j = 0;
 row4.forEach((e) => {
+  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
     // console.log(e.value);
@@ -640,8 +643,10 @@ input_word_row5 = "";
 for (i = 29; i < 36; i++) {
   row5.push(document.getElementById(i));
 }
+console.log(row5);
 j = 0;
 row5.forEach((e) => {
+  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
     // console.log(e.value);
@@ -663,7 +668,8 @@ for (i = 36; i < 43; i++) {
   row6.push(document.getElementById(i));
 }
 j = 0;
-row4.forEach((e) => {
+row6.forEach((e) => {
+  // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
     // console.log(e.value);
@@ -678,27 +684,3 @@ row4.forEach((e) => {
     }
   });
 });
-
-// async function rowCapture(row_no) {
-//   j = 0;
-//   row = [];
-//   input_word_row = [];
-//   for (i = 0; i < 7; i++) {
-//     row.push(document.getElementById((row_no - 1) * 7 + i + 1));
-//   }
-//   console.log(row);
-//   await row.forEach((e) => {
-//     e.addEventListener("change", () => {
-//       e.setAttribute("disabled", "true");
-//       // console.log(e.value);
-//       input_word_row.push(e.value);
-//       j++;
-//       if (j == 7) {
-//         checkPosition(input_word_row, row_no);
-//       }
-//     });
-//   });
-// }
-// rowCapture(1);
-// console.log("row1 doneeeeeeeeee");
-// rowCapture(2);
