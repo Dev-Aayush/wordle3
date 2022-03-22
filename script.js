@@ -549,6 +549,7 @@ function isGameOver(row_no) {
   }
   if (j == 7) {
     alert("Game Over");
+    location.reload();
   }
 }
 
