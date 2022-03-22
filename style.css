@@ -3,6 +3,7 @@
   border-style: solid;
   padding: 2px;
   margin-left: 0px;
+  margin-bottom: 2px;
 }
 
 body {
@@ -18,20 +19,7 @@ input {
 .rows {
   margin: 0px;
 }
-/* .table {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row;
-} */
 
-/* input {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  flex-direction: row;
-  flex-basis: auto;
-  margin: 0;
-} */
 .green {
   background-color: green;
 }
