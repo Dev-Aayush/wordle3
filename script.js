@@ -506,8 +506,13 @@ window.onload = function () {
 };
 // present = [0, 0, 0, 0, 0, 0, 0];
 random_no = Math.floor(Math.random() * 500 + 1);
-// console.log(words[random_no]);
+console.log(words[random_no]);
 word = words[random_no];
+
+function end() {
+  alert(word + " was the answer");
+  location.reload();
+}
 
 function checkPresence(random_word, input_word, row_no) {
   word1 = random_word;
@@ -533,21 +538,21 @@ function checkPosition(input_word, row_no) {
       randomWord = randomWord.replace(input_word[i], "*");
     }
   }
-  // console.log(randomWord);
+  console.log(randomWord);
   checkPresence(randomWord, input_word, row_no);
 }
 
 function isGameOver(row_no) {
   // boxes = [];
-  j = 0;
+  l = 0;
   for (i = (row_no - 1) * 7; i < (row_no - 1) * 7 + 7; i++) {
     // console.log(i);
     if (document.getElementById(i + 1).classList.contains("green")) {
-      j++;
+      l++;
     }
     // console.log("j is " + j.toString());
   }
-  if (j == 7) {
+  if (l == 7) {
     alert("Game Over");
     location.reload();
   }
@@ -584,7 +589,7 @@ row2.forEach((e) => {
   // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    // console.log(e.value);
+    console.log("2nd row " + e.value);
     input_word_row2.push(e.value);
     j++;
     if (j == 14) {
@@ -620,7 +625,6 @@ input_word_row4 = "";
 for (i = 22; i < 29; i++) {
   row4.push(document.getElementById(i));
 }
-j = 0;
 row4.forEach((e) => {
   // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
@@ -630,7 +634,7 @@ row4.forEach((e) => {
     // input_word_row1.push(e.value);
     input_word_row4 += e.value;
     j++;
-    if (j == 7) {
+    if (j == 28) {
       checkPosition(input_word_row4, 4);
       // checkPresence(input_word_row1, 1);
       isGameOver(4);
@@ -643,8 +647,7 @@ input_word_row5 = "";
 for (i = 29; i < 36; i++) {
   row5.push(document.getElementById(i));
 }
-console.log(row5);
-j = 0;
+// console.log(row5);
 row5.forEach((e) => {
   // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
@@ -654,7 +657,7 @@ row5.forEach((e) => {
     // input_word_row1.push(e.value);
     input_word_row5 += e.value;
     j++;
-    if (j == 7) {
+    if (j == 35) {
       checkPosition(input_word_row5, 5);
       // checkPresence(input_word_row1, 1);
       isGameOver(5);
@@ -667,7 +670,6 @@ input_word_row6 = "";
 for (i = 36; i < 43; i++) {
   row6.push(document.getElementById(i));
 }
-j = 0;
 row6.forEach((e) => {
   // e.setAttribute("disabled", "false");
   e.addEventListener("change", () => {
@@ -677,10 +679,11 @@ row6.forEach((e) => {
     // input_word_row1.push(e.value);
     input_word_row6 += e.value;
     j++;
-    if (j == 7) {
+    if (j == 42) {
       checkPosition(input_word_row6, 6);
       // checkPresence(input_word_row1, 1);
       isGameOver(6);
+      end();
     }
   });
 });

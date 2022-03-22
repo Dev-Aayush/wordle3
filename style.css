@@ -1,9 +1,10 @@
 .boxes {
   /* background-color: black; */
   border-style: solid;
-  padding: 1vh;
+  padding: 0;
   margin-left: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
+  bord
 }
 
 body {
@@ -16,7 +17,7 @@ input {
   text-align: center;
 }
 .rows {
-  margin: 0px;
+  margin: 1px;
 }
 
 .green {
