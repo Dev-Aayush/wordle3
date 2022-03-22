@@ -501,14 +501,12 @@ words = [
   "written",
 ];
 
-function isGameOver() {}
-
 window.onload = function () {
   document.getElementById("1").focus();
 };
 // present = [0, 0, 0, 0, 0, 0, 0];
 random_no = Math.floor(Math.random() * 500 + 1);
-console.log(words[random_no]);
+// console.log(words[random_no]);
 word = words[random_no];
 
 function checkPresence(random_word, input_word, row_no) {
@@ -535,8 +533,23 @@ function checkPosition(input_word, row_no) {
       randomWord = randomWord.replace(input_word[i], "*");
     }
   }
-  console.log(randomWord);
+  // console.log(randomWord);
   checkPresence(randomWord, input_word, row_no);
+}
+
+function isGameOver(row_no) {
+  // boxes = [];
+  j = 0;
+  for (i = (row_no - 1) * 7; i < (row_no - 1) * 7 + 7; i++) {
+    console.log(i);
+    if (document.getElementById(i + 1).classList.contains("green")) {
+      j++;
+    }
+    console.log("j is " + j.toString());
+  }
+  if (j == 7) {
+    alert("Game Over");
+  }
 }
 
 row1 = [];
@@ -556,6 +569,7 @@ row1.forEach((e) => {
     if (j == 7) {
       checkPosition(input_word_row1, 1);
       // checkPresence(input_word_row1, 1);
+      isGameOver(1);
     }
   });
 });
@@ -574,6 +588,7 @@ row2.forEach((e) => {
     if (j == 14) {
       checkPosition(input_word_row2, 2);
       // checkPresence(input_word_row2, 2);
+      isGameOver(2);
     }
   });
 });
@@ -592,6 +607,7 @@ row3.forEach((e) => {
     if (j == 21) {
       checkPosition(input_word_row3, 3);
       // checkPresence(input_word_row3, 3);
+      isGameOver(3);
     }
   });
 });
