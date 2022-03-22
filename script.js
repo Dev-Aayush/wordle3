@@ -541,11 +541,11 @@ function isGameOver(row_no) {
   // boxes = [];
   j = 0;
   for (i = (row_no - 1) * 7; i < (row_no - 1) * 7 + 7; i++) {
-    console.log(i);
+    // console.log(i);
     if (document.getElementById(i + 1).classList.contains("green")) {
       j++;
     }
-    console.log("j is " + j.toString());
+    // console.log("j is " + j.toString());
   }
   if (j == 7) {
     alert("Game Over");
