@@ -500,6 +500,23 @@ words = [
   "writing",
   "written",
 ];
+correct_guess =
+  localStorage.getItem("correct_guess") == null
+    ? 0
+    : localStorage.getItem("correct_guess");
+row_filled =
+  localStorage.getItem("row_filled") == null
+    ? 0
+    : localStorage.getItem("row_filled");
+accuracy = (correct_guess / row_filled) * 100;
+document.getElementById("accuracyvalue").innerText = accuracy.toFixed(2);
+function setStorage(row_no) {
+  accuracy = (correct_guess / row_filled) * 100;
+  document.getElementById("accuracyvalue").innerText = accuracy.toFixed(2);
+  localStorage.setItem("accuracy", accuracy);
+  localStorage.setItem("row_filled", row_filled);
+  localStorage.setItem("correct_guess", correct_guess);
+}
 
 window.onload = function () {
   document.getElementById("1").focus();
@@ -550,8 +567,9 @@ function isGameOver(row_no) {
     }
   }
   if (l == 7) {
+    correct_guess++;
     alert("Game Over");
-    location.reload();
+    setStorage(row_no);
   }
 }
 
@@ -569,7 +587,7 @@ row1.forEach((e) => {
     j++;
     if (j == 7) {
       checkPosition(input_word_row1, 1);
-
+      row_filled++;
       isGameOver(1);
     }
   });
@@ -588,7 +606,7 @@ row2.forEach((e) => {
     j++;
     if (j == 14) {
       checkPosition(input_word_row2, 2);
-
+      row_filled++;
       isGameOver(2);
     }
   });
@@ -607,7 +625,7 @@ row3.forEach((e) => {
     j++;
     if (j == 21) {
       checkPosition(input_word_row3, 3);
-
+      row_filled++;
       isGameOver(3);
     }
   });
@@ -626,7 +644,7 @@ row4.forEach((e) => {
     j++;
     if (j == 28) {
       checkPosition(input_word_row4, 4);
-
+      row_filled++;
       isGameOver(4);
     }
   });
@@ -646,7 +664,7 @@ row5.forEach((e) => {
     j++;
     if (j == 35) {
       checkPosition(input_word_row5, 5);
-
+      row_filled++;
       isGameOver(5);
     }
   });
@@ -665,7 +683,7 @@ row6.forEach((e) => {
     j++;
     if (j == 42) {
       checkPosition(input_word_row6, 6);
-
+      row_filled++;
       isGameOver(6);
       end();
     }
