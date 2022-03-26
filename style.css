@@ -8,6 +8,11 @@
 }
 
 body {
+background: rgb(70,90,55);
+background: -moz-radial-gradient(circle, rgba(70,90,55,1) 0%, rgba(139,146,154,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(70,90,55,1) 0%, rgba(139,146,154,1) 100%);
+background: radial-gradient(circle, rgba(70,90,55,1) 0%, rgba(139,146,154,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#465a37",endColorstr="#8b929a",GradientType=1);
   display: flex;
   flex-direction: column;
   margin: 0;
