@@ -1,4 +1,4 @@
-words = [
+qrstuvwxyzs = [
   "ability",
   "absence",
   "academy",
@@ -513,7 +513,7 @@ document.getElementById("accuracyvalue").innerText = accuracy.toFixed(2);
 function setStorage(row_no) {
   accuracy = (correct_guess / row_filled) * 100;
   document.getElementById("accuracyvalue").innerText = accuracy.toFixed(2);
-  localStorage.setItem("accuracy", accuracy);
+
   localStorage.setItem("row_filled", row_filled);
   localStorage.setItem("correct_guess", correct_guess);
 }
@@ -522,40 +522,43 @@ window.onload = function () {
   document.getElementById("1").focus();
 };
 
-random_no = Math.floor(Math.random() * 500 + 1);
-console.log(words[random_no]);
-word = words[random_no];
+qrstuvwxyz__no = Math.floor(Math.random() * 500 + 1);
+// console.log(qrstuvwxyzs[qrstuvwxyz__no]);
+qrstuvwxyz = qrstuvwxyzs[qrstuvwxyz__no];
 
 function end() {
-  alert(word + " was the answer");
+  alert(qrstuvwxyz + " was the answer");
   location.reload();
 }
 
-function checkPresence(random_word, input_word, row_no) {
-  word1 = random_word;
+function checkPresence(qrstuvwxyz__qrstuvwxyz, input_qrstuvwxyz, row_no) {
+  qrstuvwxyz1 = qrstuvwxyz__qrstuvwxyz;
   for (i = 0; i < 7; i++) {
     const currentBox = document.getElementById((row_no - 1) * 7 + i + 1);
     if (currentBox.classList.contains("green")) continue;
     else {
-      if (word1.includes(input_word[i])) {
+      if (qrstuvwxyz1.includes(input_qrstuvwxyz[i])) {
         currentBox.classList.add("orange");
-        word1 = word1.replace(input_word[i], "*");
+        qrstuvwxyz1 = qrstuvwxyz1.replace(input_qrstuvwxyz[i], "*");
       }
     }
   }
 }
 
-function checkPosition(input_word, row_no) {
-  randomWord = word;
-  input_word = input_word;
+function checkPosition(input_qrstuvwxyz, row_no) {
+  qrstuvwxyz_qrstuvwxyz = qrstuvwxyz;
+  input_qrstuvwxyz = input_qrstuvwxyz;
   for (i = 0; i < 7; i++) {
-    if (input_word[i] == randomWord[i]) {
+    if (input_qrstuvwxyz[i] == qrstuvwxyz_qrstuvwxyz[i]) {
       document.getElementById((row_no - 1) * 7 + i + 1).classList.add("green");
-      randomWord = randomWord.replace(input_word[i], "*");
+      qrstuvwxyz_qrstuvwxyz = qrstuvwxyz_qrstuvwxyz.replace(
+        input_qrstuvwxyz[i],
+        "*"
+      );
     }
   }
-  console.log(randomWord);
-  checkPresence(randomWord, input_word, row_no);
+  // console.log(qrstuvwxyz_qrstuvwxyz);
+  checkPresence(qrstuvwxyz_qrstuvwxyz, input_qrstuvwxyz, row_no);
 }
 
 function isGameOver(row_no) {
@@ -574,7 +577,7 @@ function isGameOver(row_no) {
 }
 
 row1 = [];
-input_word_row1 = "";
+input_qrstuvwxyz_row1 = "";
 for (i = 1; i < 8; i++) {
   row1.push(document.getElementById(i));
 }
@@ -583,10 +586,10 @@ row1.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
 
-    input_word_row1 += e.value;
+    input_qrstuvwxyz_row1 += e.value;
     j++;
     if (j == 7) {
-      checkPosition(input_word_row1, 1);
+      checkPosition(input_qrstuvwxyz_row1, 1);
       row_filled++;
       isGameOver(1);
     }
@@ -594,18 +597,18 @@ row1.forEach((e) => {
 });
 
 row2 = [];
-input_word_row2 = [];
+input_qrstuvwxyz_row2 = [];
 for (i = 8; i < 15; i++) {
   row2.push(document.getElementById(i));
 }
 row2.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
-    console.log("2nd row " + e.value);
-    input_word_row2.push(e.value);
+    // console.log("2nd row " + e.value);
+    input_qrstuvwxyz_row2.push(e.value);
     j++;
     if (j == 14) {
-      checkPosition(input_word_row2, 2);
+      checkPosition(input_qrstuvwxyz_row2, 2);
       row_filled++;
       isGameOver(2);
     }
@@ -613,7 +616,7 @@ row2.forEach((e) => {
 });
 
 row3 = [];
-input_word_row3 = [];
+input_qrstuvwxyz_row3 = [];
 for (i = 15; i < 22; i++) {
   row3.push(document.getElementById(i));
 }
@@ -621,10 +624,10 @@ row3.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
 
-    input_word_row3.push(e.value);
+    input_qrstuvwxyz_row3.push(e.value);
     j++;
     if (j == 21) {
-      checkPosition(input_word_row3, 3);
+      checkPosition(input_qrstuvwxyz_row3, 3);
       row_filled++;
       isGameOver(3);
     }
@@ -632,7 +635,7 @@ row3.forEach((e) => {
 });
 
 row4 = [];
-input_word_row4 = "";
+input_qrstuvwxyz_row4 = "";
 for (i = 22; i < 29; i++) {
   row4.push(document.getElementById(i));
 }
@@ -640,10 +643,10 @@ row4.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
 
-    input_word_row4 += e.value;
+    input_qrstuvwxyz_row4 += e.value;
     j++;
     if (j == 28) {
-      checkPosition(input_word_row4, 4);
+      checkPosition(input_qrstuvwxyz_row4, 4);
       row_filled++;
       isGameOver(4);
     }
@@ -651,7 +654,7 @@ row4.forEach((e) => {
 });
 
 row5 = [];
-input_word_row5 = "";
+input_qrstuvwxyz_row5 = "";
 for (i = 29; i < 36; i++) {
   row5.push(document.getElementById(i));
 }
@@ -660,10 +663,10 @@ row5.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
 
-    input_word_row5 += e.value;
+    input_qrstuvwxyz_row5 += e.value;
     j++;
     if (j == 35) {
-      checkPosition(input_word_row5, 5);
+      checkPosition(input_qrstuvwxyz_row5, 5);
       row_filled++;
       isGameOver(5);
     }
@@ -671,7 +674,7 @@ row5.forEach((e) => {
 });
 
 row6 = [];
-input_word_row6 = "";
+input_qrstuvwxyz_row6 = "";
 for (i = 36; i < 43; i++) {
   row6.push(document.getElementById(i));
 }
@@ -679,10 +682,10 @@ row6.forEach((e) => {
   e.addEventListener("change", () => {
     e.setAttribute("disabled", "true");
 
-    input_word_row6 += e.value;
+    input_qrstuvwxyz_row6 += e.value;
     j++;
     if (j == 42) {
-      checkPosition(input_word_row6, 6);
+      checkPosition(input_qrstuvwxyz_row6, 6);
       row_filled++;
       isGameOver(6);
       end();
